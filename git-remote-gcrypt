@@ -831,7 +831,7 @@ setup()
 	# Set up a subdirectory in /tmp
 	temp_key=$(genkey 9 | tr '/' _)
 	Tempdir="${TMPDIR:-/tmp}/git-remote-gcrypt-${temp_key}.$$"
-	mkdir -m 700 "${Tempdir}"
+	mkdir "${Tempdir}"
 
 	trap cleanup_tmpfiles EXIT
 	trap 'exit 1' 1 2 3 15
